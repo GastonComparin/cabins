@@ -1,4 +1,4 @@
-const createUser = require("../../Controllers/userControllers/CreateUser");
+const createUser = require("../../Controllers/userControllers/CreateUserController");
 const createUserHandler = async (req, res) => {
   const { name, email, phone } = req.body;
   try {
