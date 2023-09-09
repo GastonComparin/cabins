@@ -1,5 +1,11 @@
-const getDetailHandler = (req, res) => {
+const userById = require("../../Controllers/userControllers/getDetailController");
+const getDetailHandler = async (req, res) => {
   const { id } = req.params;
-  res.status(200).send("NIY: Trae el detalle de un user");
+  try {
+    const userId = await userById(id);
+    res.status(200).json(userId);
+  } catch (error) {
+    res.status(400).json({ error: error.messagge });
+  }
 };
 module.exports = getDetailHandler;
