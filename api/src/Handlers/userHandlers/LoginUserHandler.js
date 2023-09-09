@@ -5,7 +5,6 @@ const loginUserHandler = async (req, res) => {
     const login = await userLogin(email, password);
     res.status(200).json({ login });
   } catch (error) {
-    console.log("error en catch");
     res.status(400).json({ error: error.messagge });
   }
 };
