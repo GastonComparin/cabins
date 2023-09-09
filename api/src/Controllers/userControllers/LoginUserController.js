@@ -1,6 +1,5 @@
 const { Users } = require("../../db");
 const compare = (password, newPass) => {
-  console.log(password, newPass);
   if (password === newPass) return true;
 };
 
@@ -13,7 +12,7 @@ const userLogin = async (email, password) => {
     };
   } else {
     console.log("econtramos el mail");
-    const match = await compare(password, toLogin.password);
+    const match = compare(password, toLogin.password);
     if (match) {
       return { success: true };
     } else {
