@@ -15,8 +15,8 @@ const sequelize = new Sequelize(
 userModel(sequelize);
 cabinModel(sequelize);
 
-const { Users, cabins } = sequelize.models;
+const { Users, Cabins } = sequelize.models;
 const User_Cabin = sequelize.define("User_Cabin", {}, { timestamps: false });
-Users.belongsToMany(cabins, { through: User_Cabin });
-cabins.belongsToMany(Users, { through: User_Cabin });
+Users.belongsToMany(Cabins, { through: User_Cabin });
+Cabins.belongsToMany(Users, { through: User_Cabin });
 module.exports = { sequelize, ...sequelize.models };

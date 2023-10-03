@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   sequelize.define(
-    "cabins",
+    "Cabins",
     {
       id: {
         type: DataTypes.UUID,
@@ -14,11 +14,25 @@ module.exports = (sequelize) => {
       },
       capacity: {
         type: DataTypes.STRING,
-        unique: true,
       },
       extras: {
         type: DataTypes.STRING,
         allowNull: true,
+      },
+      price: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      direction: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      image: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        defaultValue: [
+          "https://img.freepik.com/premium-photo/captivating-image-secluded-cabin-situated-shores-tranquil-lake-providing-serene-luxurious-escape-nature_674594-8114.jpg?w=2000",
+        ],
+        allowNull: false,
       },
     },
     { timestamps: false }

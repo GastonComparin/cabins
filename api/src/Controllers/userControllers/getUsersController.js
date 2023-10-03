@@ -6,6 +6,8 @@ const getUsers = async () => {
     return {
       name: user.name,
       email: user.email,
+      phone: user.phone,
+      password: user.password,
     };
   });
 };
